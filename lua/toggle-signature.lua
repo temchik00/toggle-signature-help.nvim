@@ -57,7 +57,6 @@ local default_config = {
 ---                      {focus_id}
 ---             - silent (boolean, default false) If 'true', won't print message if no signature exists 
 function M.setup(config)
-  vim.notify("new setup called")
   local local_config = vim.tbl_deep_extend('keep', config or {}, default_config)
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
     vim.lsp.handlers.signature_help,
